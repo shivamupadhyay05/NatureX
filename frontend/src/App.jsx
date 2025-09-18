@@ -17,6 +17,16 @@ import { Notifications } from "./pages/student/Notifications";
 import { LessonViewer } from "./pages/student/LessonViewer";
 import { QuizViewer } from "./pages/student/QuizViewer";
 import { MissionViewer } from "./pages/student/MissionViewer";
+import { Games } from "./pages/student/Games";
+import {
+  WasteSort,
+  EnergyFlow,
+  Crossword,
+  PlantTree,
+  RecycleDash,
+  EcoFlappy,
+  TrashFlight,
+} from "./pages/student/games/index.js";
 import { Layout } from "./shared/Layout";
 export const AuthContext = createContext(null);
 export function useAuth() {
@@ -144,6 +154,71 @@ function App() {
             />
 
             <Route path="leaderboard" element={<Leaderboard />} />
+
+            <Route
+              path="games"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <Games />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/waste-sort"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <WasteSort />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/energy-flow"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <EnergyFlow />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/crossword"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <Crossword />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/plant-tree"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <PlantTree />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/recycle-dash"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <RecycleDash />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/eco-flappy"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <EcoFlappy />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="game/trash-flight"
+              element={
+                <RequireAuth roles={["student"]}>
+                  <TrashFlight />
+                </RequireAuth>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>
