@@ -22,6 +22,7 @@ export function Leaderboard() {
                                 <th className="py-2 pr-4">XP</th>
                             </tr>
                         </thead>
+						
                         <tbody>
                             {rows.map((r, idx) => (
                                 <tr key={r._id || idx} className="border-t border-neutral-800">
